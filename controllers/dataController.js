@@ -16,7 +16,8 @@ const s3Client = new S3Client({
 
 // Multer S3 storage for file uploads
 const upload = multer({
-    storage: multer.memoryStorage()  // Store the file in memory temporarily before uploading to S3
+    storage: multer.memoryStorage(),
+    limits: { fileSize: 10 * 1024 * 1024 }   
 }).single('file');
 
 // Helper function to upload file to S3 using AWS SDK v3
@@ -71,6 +72,8 @@ const importFile = async (req, res) => {
         }
     });
 };
+
+
 
 // Convert readable stream to buffer
 const streamToBuffer = (stream) => {
