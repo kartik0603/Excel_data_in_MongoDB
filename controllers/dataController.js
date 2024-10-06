@@ -63,6 +63,7 @@ const importFile = async (req, res) => {
 
             // Insert the data into MongoDB
             await Data.insertMany(sheetData);
+            console.log("Data inserted successfully");
             res.redirect('/');
         } catch (err) {
             console.error("Error processing file:", err);
