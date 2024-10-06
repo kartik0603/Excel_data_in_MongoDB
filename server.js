@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./config/db");
 const dataRouter = require("./routes/data.route");
 const mongoose = require('mongoose');
+const { getFileData } = require("./controllers/dataController"); 
 
 // Prepare for Mongoose 7 strictQuery changes
 mongoose.set('strictQuery', false);
@@ -26,6 +27,8 @@ app.use('/data',dataRouter);
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "views", "index.html"));
 });
+app.get('/api/file-data/:fileKey', getFileData); 
+
 
 app.listen(8082, () => {
   console.log("Server is running on port 8082");
