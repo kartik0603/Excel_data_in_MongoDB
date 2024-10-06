@@ -1,0 +1,116 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #eef2f3; /* Light background for contrast */
+    color: #333;
+}
+
+/* Heading styles */
+h1 {
+    color: #4a90e2; /* Bright blue */
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners for table */
+    overflow: hidden; /* Clip the border radius */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Header cell styles */
+th {
+    background-color: #5cb85c; /* Green */
+    color: white;
+    font-weight: bold;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+    background-color: #e3f2fd; /* Light blue */
+}
+
+tr:nth-child(odd) {
+    background-color: #fff3e0; /* Light orange */
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #ffe0b2; /* Light peach on hover */
+}
+
+
+/* Form styles */
+form {
+    background: #ffffff; /* White background for forms */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Input and button styles */
+input[type="file"],
+button {
+    padding: 10px 25px;
+    margin: 0.5%;
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border */
+    transition: background-color 0.3s ease;
+}
+
+input[type="file"] {
+    width: 180px /*Full width for file input *
+     margin-bottom: 10px; /*Space between file input and button */
+}
+
+/* Button styles */
+button {
+    background-color: #ff5722; /* Vibrant orange */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+}

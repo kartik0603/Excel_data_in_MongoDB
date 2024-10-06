@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Excel Data Importer</title>
+</head>
+
+<body>
+    <h1>Excel to MongoDB Importer</h1>
+    <form action="/data/import" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx">
+        <button type="submit">Upload and Import</button>
+    </form>
+    <form action="/data/delete" method="POST">
+        <button type="submit">Delete All Data</button>
+    </form>
+
+    <h2>Imported Data</h2>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    
+
+    <script>
+        fetch("/data/export")
+            .then((response) => response.json())
+            .then((data) => {
+                const tableBody = document.querySelector("#data-table tbody");
+                data.forEach((row) => {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `<td>${row.Name}</td><td>${row.Email}</td><td>${row.Mobile}</td><td>${row.City}</td><td>${row.Country}</td>`;
+                    tableBody.appendChild(tr);
+                });
+            });
+
+
+    </script>
+</body>
+
+</html>
