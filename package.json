@@ -2,9 +2,9 @@
   "name": "excel-to-mongodb",
   "version": "1.0.0",
   "description": "A Node.js app to import and export Excel data to MongoDB.",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.665.0",

@@ -6,7 +6,7 @@ const { getFileData } = require("./controllers/dataController");
 
 // Prepare for Mongoose 7 strictQuery changes
 mongoose.set('strictQuery', false);
-
+ const PORT =process.env.PORT || 8082;
 
 
 
@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 app.get('/api/file-data/:fileKey', getFileData); 
 
 
-app.listen(8082, () => {
-  console.log("Server is running on port 8082");
+app.listen(PORT, () => {
+  console.log("Server is running on port "+PORT);
   connectDB();
 });
