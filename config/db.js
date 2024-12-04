@@ -10,11 +10,3 @@ const connectDB = async () => {
 module.exports = connectDB;
 
 
-// mongodb://localhost:27017/Uploadexcel
-
-// kartikhirapara800
-// 1bngON3FMlQlC0cn
-
-// 1bngON3FMlQlC0cn
-
-// mongodb+srv://kartikhirapara800:1bngON3FMlQlC0cn@excelploader.juskv.mongodb.net/?retryWrites=true&w=majority&appName=excelploader
